@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crystallum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inconsolata:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- header -->
+    <div class="cont mb-5" style="width: 1000px; margin: 0 auto;">
+        <div class="header d-flex flex-row align-items-center justify-content-between border-bottom">
+            <img class="logo" src="{{ url_for('static', filename='img/logo.jpeg') }}" alt="Crystallum logo">
+        </div>
+        <!-- Nav -->
+        <div class="navbar mt-5 border-bottom border-2 d-flex justify-content-around">
+            <a href="/crystals" class="">Crystals</a>
+            <a href="/items">Singing Bowls, Sage, and More</a>
+        </div>
+        <!-- API Quote -->
+        <div class="text-center mt-3 api">
+            <span class="text-light">&#9826;</span>
+            <p id="quote" class="text-light"></p>
+            <span class="text-light">&#9826;</span>
+        </div>
+        <!-- sliders -->
+        <div class="mt-4 d-flex flex-row justify-content-between gap-2">
+            <div id="carouselExampleIndicators" class="carousel slide slider" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{ url_for('static', filename='img/bowl1.jpeg') }}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='img/crystals.jpeg') }}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='img/sAGE.jpeg') }}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div featured">
+            <h2 class="text-center mb-5 border-bottom pb-2">Featured Crystals</h2>
+            <div class="div d-flex flex-row justify-content-between mb-5" style="width: 750px; margin: 0 auto;">
+                {%for rock in crystals%}
+                <div class="cryblock d-flex flex-column align-items-center gap-2 ">
+                    <div class="try"><a href="/crystals/show/{{rock.id}}">
+                            <img src="{{ url_for('static', filename='img/'+rock.attributes) }}" alt=""
+                                class="border border-2 border-secondary">
+                    </div>
+                    <p>{{rock.name}}</p>
+                    </a>
+                </div>
+                {%endfor%}
+
+            </div>
+            <div class="div">
+                <h2 class="text-center mb-5 border-bottom pb-2">Featured Items</h2>
+                <div class="undfeat d-flex flex-row justify-content-between" style="width: 750px; margin: 0 auto;">
+                    {%for piece in items%}
+                    <div class="cryblock d-flex flex-column align-items-center gap-2">
+                        <div class="try">
+                            <a href="/items/show/{{piece.id}}">
+                                <img src="{{ url_for('static', filename='img/'+piece.attributes) }}" alt=""
+                                    class="border border-2 border-secondary">
+                        </div>
+                        <p>{{piece.name}}</p>
+                        </a>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <h3>We're growing!</h3>
+            <p>We have implemented only about 50% of our intended features!</p>
+            <div class="progress">
+                <div class="progress-bar bg-info progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                    aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

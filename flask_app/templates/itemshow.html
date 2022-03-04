@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crystallum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/show.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- header -->
+    <div class="cont" style="width: 1000px; margin: 0 auto;">
+        <div class="header d-flex flex-row align-items-center justify-content-between border-bottom">
+            <img class="logo" src="{{ url_for('static', filename='img/logo.jpeg') }}" alt="Crystallum logo">
+        </div>
+        <!-- Nav -->
+        <div class="navbar mt-5 border-bottom border-2">
+            <a href="/">Home</a>
+            <a href="/crystals">Crystals</a>
+            <a href="/items">Singing Bowls, Sage, and More</a>
+        </div>
+        <div class="center d-flex flex-row justify-content-center mt-5">
+            <!-- img with border right -->
+            <img class="border-right prod-img" src="{{ url_for('static', filename='img/'+gem.attributes) }}" alt="" style="height: 300px; width: 300px;">
+            <div class="info gem-name d-flex flex-column justify-content-center">
+                <p class="text-center gem">{{gem.name}}</p>
+            </div>
+        </div>
+        <div class="desc mt-5" style="margin: 0 auto; width: 600px;">
+            <p class="text-center description"><u>Description</u></p>
+            <p>{{gem.description}}</p>
+        </div>
+
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

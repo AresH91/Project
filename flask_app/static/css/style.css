@@ -1,0 +1,97 @@
+
+.navi-list {
+    list-style-type: none;
+}
+
+.header {
+    margin-bottom: 0;
+    height: 80px;
+}
+.logo {
+    position: relative;
+    top: 20px;
+
+}
+
+.lr {
+    margin-top: 60px;
+}
+
+.carousel-item{
+    height: 490px;
+    width: 490px;
+} 
+
+.carousel{
+    width:1000px;
+    height:300px;
+}
+
+/* .card img {
+    height: 185px;
+    width: 185px;
+
+} */
+
+.cryblock img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.div h2 {
+    font-family: 'Dancing Script', cursive;
+}
+.h2, .crystal {
+    margin-bottom: 50px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.cont a{
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(65, 157, 228);
+    font-size: 14pt;
+}
+
+.cont a:hover{
+    color: rgb(203, 28, 206);
+    text-decoration: underline;
+}
+
+#quote {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.api {
+    background-color: #669fbe;
+    padding: 10px;
+}
+
+.featured {
+    margin-top: 260px;
+}
+
+.footer {
+    width: 1000px;
+    height: 200px;
+    background-color: #669fbe;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    color: azure;
+}
+
+.footer h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 40pt;
+}
+
+.progress {
+    width: 600px;
+    margin: 0 auto;
+}

@@ -1,0 +1,33 @@
+.prod-img {
+    border-radius: 50%;
+    height: 100px;
+    margin-right: 50px;
+}
+
+.center th {
+    font-size: 25px;
+}
+
+.gem-name {
+    width: 300px;
+}
+
+.gem {
+    font-size: 50px;
+}
+
+.description {
+    font-size: 25px;
+}
+
+.cont a{
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(65, 157, 228);
+    font-size: 14pt;
+}
+
+.cont a:hover{
+    color: rgb(203, 28, 206);
+    text-decoration: underline;
+}
